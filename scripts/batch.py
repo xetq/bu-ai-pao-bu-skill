@@ -40,9 +40,11 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
       "MiniProgramEnv/Windows WindowsWechat/WMPF WindowsWechat(0x63090a13) "
       "UnifiedPCWindowsWechat(0xf254200d) XWEB/26073")
 
+# TLS 证书校验默认开启；只有显式设置 AITIYU_INSECURE=1 才关闭（应急用，不要常态化）
 CTX = ssl.create_default_context()
-CTX.check_hostname = False
-CTX.verify_mode = ssl.CERT_NONE
+if os.environ.get("AITIYU_INSECURE") == "1":
+    CTX.check_hostname = False
+    CTX.verify_mode = ssl.CERT_NONE
 
 # 南苑运动区（田径场）三个打卡点 —— 正好满足「打卡次数 3~9」
 PUNCH_RING = [

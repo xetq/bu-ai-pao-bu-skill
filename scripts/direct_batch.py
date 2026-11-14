@@ -17,9 +17,11 @@ CID = "db308ad8185aa5ff3b66bf787f7cddbd"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/120.0.0.0 Safari/537.36 MicroMessenger/7.0.20.1781(0x6700143B) "
       "MiniProgramEnv/Windows WindowsWechat/WMPF XWEB/26073")
+# TLS 证书校验默认开启；只有显式设置 AITIYU_INSECURE=1 才关闭（应急用，不要常态化）
 CTX = ssl.create_default_context()
-CTX.check_hostname = False
-CTX.verify_mode = ssl.CERT_NONE
+if os.environ.get("AITIYU_INSECURE") == "1":
+    CTX.check_hostname = False
+    CTX.verify_mode = ssl.CERT_NONE
 
 # 账号身份一律从 JWT 解析（见 jwt_claims），不保留默认值：
 # 缺字段就直接中止，避免"用了别人的号还以为是自己"。

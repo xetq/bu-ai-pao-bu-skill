@@ -1,7 +1,7 @@
 ---
 name: bu-ai-pao-bu
 description: 不爱跑步 — 校园跑小程序「爱跑步Run / 爱体育」全自动打卡。当需要完成校园跑里程/次数、批量生成跑步记录、绕过小程序上报加密、或分析 aitiyuplus.cn 后端协议时使用。含 finishRun 双层加密还原、直写记录通路，以及反侦察清单（字段完整性 / 数值自洽 / 轨迹真实度）。
-version: 1.1.0
+version: 1.1.1
 tags: [校园跑, 逆向, 自动化, ruoyi, aes-rsa, 微信小程序, 反侦察]
 ---
 
