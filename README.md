@@ -5,7 +5,7 @@
 
 ---
 
-你可以对你的Agent说:"安装https://github.com/xetq/bu-ai-pao-bu-skill这个skill,并协助我配置前置要素,然后帮我打卡一天"
+你可以对你的Agent说:"安装 https://github.com/xetq/bu-ai-pao-bu-skill 这个skill,并协助我配置前置要素,然后帮我打卡一天"
 
 
 也可以继续查看README
